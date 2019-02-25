@@ -33,6 +33,7 @@ urlpatterns = [
     path('sair/', auth_views.LogoutView.as_view(template_name='index.html'), name='logout'),
     path('catalogo/', include('catalog.urls', namespace='catalog')),
     path('conta/', include('accounts.urls', namespace='accounts')),
-	path('compras/', include('checkout.urls', namespace='checkout')),																  
+	path('compras/', include('checkout.urls', namespace='checkout')),
+    path('paypal/', include('paypal.standard.ipn.urls')),																  
     path('admin/', admin.site.urls),
 ]

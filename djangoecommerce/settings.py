@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '123')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # libs
     'widget_tweaks',
+    'paypal.standard.ipn',
     # apps
     'core',
     'accounts',
@@ -171,7 +172,12 @@ MESSAGE_TAGS = {
     messages_constants.ERROR: 'danger',
 }
 
+PAGSEGURO_TOKEN = '2CFDD2A27DA347E2829B747ED668F149'
+PAGSEGURO_EMAIL = 'loja@allbuy.com.br'
+PAGSEGURO_SANDBOX = True
 
+PAYPAL_TEST = True
+PAYPAL_EMAIL = 'loja@allbuy.com.br'
 
 try:
     from .local_settings import *
